@@ -12,9 +12,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LandingController">
+<AnchorPane fx:controller="LandingController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <VBox alignment="TOP_CENTER" minHeight="150.0" minWidth="250.0" prefHeight="150.0" prefWidth="250.0" spacing="25.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox alignment="TOP_CENTER" spacing="25.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -23,14 +23,14 @@
             </ImageView>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="80.0">
                <children>
-                  <Button minHeight="-Infinity" minWidth="-Infinity" onAction="#handleExpensesClick" prefHeight="150.0" prefWidth="250.0" style="-fx-background-color: #98EECC; -fx-background-radius: 15; -fx-cursor: hand; -fx-border-color: transparent;">
+                  <Button onAction="#handleExpensesClick" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="250.0" style="-fx-background-color: #98EECC; -fx-background-radius: 15; -fx-cursor: hand; -fx-border-color: transparent;">
                      <graphic>
                         <AnchorPane prefHeight="150.0" prefWidth="250.0">
                            <children>
-                              <Label layoutX="14.0" layoutY="14.0" text="Total Expenses (this month)">
+                              <Label layoutX="0.0" layoutY="14.0" text="Total Expenses (this month)">
                                  <font><Font name="Times New Roman" size="14.0" /></font>
                               </Label>
-                              <Label layoutX="14.0" layoutY="47.0" text="₱ 800.00">
+                              <Label layoutX="0.0" layoutY="52.0" text="₱ 800.00">
                                  <font><Font name="System Bold" size="30.0" /></font>
                               </Label>
                            </children>
@@ -48,25 +48,17 @@
                         </Label>
                      </children>
                   </AnchorPane>
-                  <Button minWidth="250.0" mnemonicParsing="false" onAction="#handleGWAClick" style="-fx-background-color: #FF8E72; -fx-background-radius: 15; -fx-cursor: hand;">
-                     <graphic>
-      
-                                          <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="250.0" style="-fx-background-color: #FF8E72; -fx-background-radius: 15;">
-                           <children>
-                              <Label layoutX="14.0" layoutY="14.0" text="GWA">
-                                 <font>
-                                    <Font name="Georgia" size="14.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="14.0" layoutY="52.0" text="86.75">
-                                 <font>
-                                    <Font name="System Bold" size="30.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </AnchorPane>
-                     </graphic>
-                  </Button>
+
+                  <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="250.0" style="-fx-background-color: #FF8E72; -fx-background-radius: 15;">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" text="GWA">
+                           <font><Font name="Georgia" size="14.0" /></font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="52.0" text="86.75">
+                           <font><Font name="System Bold" size="30.0" /></font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
                </children>
             </HBox>
 

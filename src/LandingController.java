@@ -4,28 +4,26 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Stage;
 import java.io.IOException;
 
 public class LandingController {
 
     @FXML
     private void handleExpensesClick(ActionEvent event) {
-        switchScene(event, "ExpensesTracker.fxml");
-    }
-
-    @FXML
-    private void handleGWAClick(ActionEvent event) {
-        switchScene(event, "gwa.fxml");
-    }
-
-    // This helper method saves you from repeating the same code!
-    private void switchScene(ActionEvent event, String fxmlFile) {
         try {
-            Parent view = FXMLLoader.load(getClass().getResource(fxmlFile));
-            Scene currentScene = ((Node)event.getSource()).getScene();
-            currentScene.setRoot(view);
+            // This loads your second FXML file
+            Parent expensesView = FXMLLoader.load(getClass().getResource("ExpensesTracker.fxml"));
+
+            // This gets the current window (Stage)
+            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+            // This replaces the "Landing" scene with the "Expenses" scene
+            window.setScene(new Scene(expensesView));
+            window.show();
+
         } catch (IOException e) {
-            System.err.println("Error loading " + fxmlFile);
+            System.err.println("Error: Could not find ExpensesTracker.fxml. Make sure the filename matches exactly!");
             e.printStackTrace();
         }
     }
